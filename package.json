@@ -1,0 +1,8 @@
+{
+  "name": "ES1-Backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DayaToledo/ES1-Backend.git",
+  "author": "DayaToledo <dayanabritotoledo_@hotmail.com>",
+  "license": "MIT"
+}
