@@ -3,8 +3,12 @@ const dbConfig = require('../config/database');
 
 const connection = new Sequelize(dbConfig);
 
-// const Client = require('../models/FormAluno');
+const Aluno = require('../models/Aluno');
+const Form = require('../models/Form');
 
-// Client.init(connection);
+Aluno.init(connection);
+Form.init(connection);
+
+Form.associate(connection.models)
 
 module.exports = connection;
