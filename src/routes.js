@@ -3,8 +3,10 @@ const routes = express.Router();
 
 const AlunoController = require('./controllers/alunoController');
 const FormController = require('./controllers/formController');
-const OrientadorController = require('./controllers/orientadorController')
-const FeedbackController = require('./controllers/feedbackController')
+const OrientadorController = require('./controllers/orientadorController');
+const FeedbackController = require('./controllers/feedbackController');
+const SendForm = require('./controllers/sendForm');
+
 
 routes.get('/', (req, res) => {
   return res.status(200).json({ ok: true });
@@ -21,5 +23,9 @@ routes.get('/queryAll/orientador', OrientadorController.read);
 
 routes.post('/register/feedback', FeedbackController.create);
 routes.get('/queryAll/feedback', FeedbackController.read);
+
+routes.post('/send', SendForm.sendAnswer);
+routes.post('/query', SendForm.getAnswer);
+
 
 module.exports = routes;
