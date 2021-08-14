@@ -2,10 +2,10 @@ const Feedback = require('../models/Feedback');
 
 module.exports = {
   async create(req, res) {
-    const { comment, evaluation } = req.body;
+    const { comment, evaluation, orientadorId } = req.body;
     try {
       console.log(req.body);
-      const feedback = await Feedback.create({ comment, evaluation });
+      const feedback = await Feedback.create({ comment, evaluation, orientadorId });
       return res.status(200).json(feedback);
     } catch (error) {
       console.log(error);
