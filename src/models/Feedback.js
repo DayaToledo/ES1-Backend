@@ -9,6 +9,10 @@ class Feedback extends Model {
       sequelize: connection,
     })
   }
+
+  static associate(models) {
+    this.belongsTo(models.Orientador, { foreignKey: 'orientadorId', as: 'orientadors' });
+  }
 }
 
 module.exports = Feedback;

@@ -14,5 +14,7 @@ Orientador.init(connection);
 Feedback.init(connection);
 
 Form.associate(connection.models)
+Feedback.associate(connection.models)
+
 
 module.exports = connection;
