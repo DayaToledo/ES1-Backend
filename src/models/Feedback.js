@@ -12,6 +12,8 @@ class Feedback extends Model {
 
   static associate(models) {
     this.belongsTo(models.Orientador, { foreignKey: 'orientadorId', as: 'orientadors' });
+    this.belongsTo(models.Coordenador, { foreignKey: 'coordenadorId', as: 'coordenadors' });
+    this.belongsTo(models.Aluno, { foreignKey: 'alunoId', as: 'alunos' });
   }
 }
 

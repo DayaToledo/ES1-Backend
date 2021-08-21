@@ -4,28 +4,28 @@ const routes = express.Router();
 const AlunoController = require('./controllers/alunoController');
 const FormController = require('./controllers/formController');
 const OrientadorController = require('./controllers/orientadorController');
+const CoordenadorController = require('./controllers/coordenadorController');
 const FeedbackController = require('./controllers/feedbackController');
-const SendForm = require('./controllers/sendForm');
 
 
 routes.get('/', (req, res) => {
   return res.status(200).json({ ok: true });
 });
 
-routes.post('/register/aluno', AlunoController.create);
-routes.get('/queryAll/aluno', AlunoController.read);
+routes.post('/create/aluno', AlunoController.create);
+routes.get('/read/aluno', AlunoController.read);
 
-routes.post('/register/form', FormController.create);
-routes.get('/queryAll/form', FormController.read);
+routes.post('/create/form', FormController.create);
+routes.post('/read/form', FormController.read);
 
-routes.post('/register/orientador', OrientadorController.create);
-routes.get('/queryAll/orientador', OrientadorController.read);
+routes.post('/create/orientador', OrientadorController.create);
+routes.get('/read/orientador', OrientadorController.read);
 
-routes.post('/register/feedback', FeedbackController.create);
-routes.get('/queryAll/feedback', FeedbackController.read);
+routes.post('/create/feedback', FeedbackController.create);
+routes.post('/read/feedbackOrientador', FeedbackController.readWithOrientador);
+routes.post('/read/feedbackCoordenador', FeedbackController.readWithCoordenador);
 
-routes.post('/send', SendForm.sendAnswer);
-routes.post('/query', SendForm.getAnswer);
-
+routes.post('/create/coordenador', CoordenadorController.create);
+routes.get('/read/coordenador', CoordenadorController.read);
 
 module.exports = routes;
