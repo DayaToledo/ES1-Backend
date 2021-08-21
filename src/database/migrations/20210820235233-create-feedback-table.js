@@ -17,6 +17,27 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
+      orientadorId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: "orientadors", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
+      coordenadorId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: "coordenadors", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
+      alunoId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: "alunos", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
