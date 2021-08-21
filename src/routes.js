@@ -19,7 +19,7 @@ routes.post('/create/form', FormController.create);
 routes.post('/read/form', FormController.read);
 
 routes.post('/create/orientador', OrientadorController.create);
-routes.get('/read/orientador', OrientadorController.read);
+routes.get('/read/orientador/:id', OrientadorController.read);
 
 routes.post('/create/feedback', FeedbackController.create);
 routes.post('/read/feedbackOrientador', FeedbackController.readWithOrientador);
