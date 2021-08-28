@@ -16,8 +16,8 @@ module.exports = {
   async read(req, res) {
     try {
       const { id } = req.params;
-
       const orientador = await Orientador.findByPk(id);
+
       return res.status(200).json(orientador);
     } catch (error) {
       console.log(error);

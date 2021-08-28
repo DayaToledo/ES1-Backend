@@ -15,10 +15,10 @@ module.exports = {
 
   async read(req, res) {
     try {
-      const allCoordenador = await Coordenador.findAll();
-      if (allCoordenador.length === 0)
-        return res.status(404).json({ msg: 'NO ORIENTADOR FOUND' });
-      return res.status(200).json(allCoordenador);
+      const { id } = req.params;
+      const coordenador = await Coordenador.findByPk(id);
+
+      return res.status(200).json(coordenador);
     } catch (error) {
       console.log(error);
       return res.status(500).json({ msg: 'GET ALL ERROR' });

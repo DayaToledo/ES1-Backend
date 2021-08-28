@@ -26,6 +26,6 @@ routes.post('/read/feedbackOrientador', FeedbackController.readWithOrientador);
 routes.post('/read/feedbackCoordenador', FeedbackController.readWithCoordenador);
 
 routes.post('/create/coordenador', CoordenadorController.create);
-routes.get('/read/coordenador', CoordenadorController.read);
+routes.get('/read/coordenador/:id', CoordenadorController.read);
 
 module.exports = routes;
