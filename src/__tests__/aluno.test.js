@@ -42,7 +42,7 @@ describe("test the controller aluno", () => {
     const response = await request(app).get("/read/aluno");
 
     expect(response.status).toBe(200);
-    expect(response.body.length).toBe(2);
+    expect(response.body.length).toBe(4);
   });
 
   // After all tersts have finished, close the DB connection
